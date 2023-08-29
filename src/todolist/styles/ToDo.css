@@ -1,0 +1,161 @@
+.ToDoList-container {
+    background-color:#ff6666;
+    width: 800px;
+    box-shadow: -20px -20px 0px 0px rgba(227, 86, 86, 0.186);
+}
+.ToDoList-container.animate{
+    animation: appear 2s ease-in-out;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.Header-container {
+    position: relative;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+.Header-container_header {
+    margin-top: 20px;
+    font-size: 40px;
+}
+.Header-container_subheader {
+    margin-top: 5px;
+    font-size: 13px;
+}
+.Header-container_divider {
+    margin-top: 5px;
+    width: 25%;
+}
+.Header-container_icon {
+    position: absolute;
+    height: 100px;
+    right: 5px;
+    color: #fff;
+}
+
+.ToDo {
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .ToDo::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #ffffffc5;
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+} */
+
+.Edit {
+    margin-right: 15px;
+}
+
+.Delete {
+    margin-right: 15px;
+}
+
+.InputEdit {
+    width: 450px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    font-size: 30px;
+    color: grey;
+}
+
+.Save {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    border: none;
+    border: 0.1px solid #ff6666;
+    background-color: #fff;
+    color: #fc5353;
+    transition: 0.3s;
+}
+.Save:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #000;
+    color: #000;
+}
+
+.Todo-task {
+    position: relative;
+    transition: opacity 0.4s linear;
+}
+
+.Todo-task.completed {
+    opacity: 0.6;
+}
+
+.Todo-task.completed:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    animation: strickitem 0.5s ease-out 0s forwards;
+}
+
+@keyframes strickitem {
+    to {
+        width: calc(100% + 1rem)
+    }
+}
+
+@media (max-width: 992px)  {
+    .ToDoList-container {
+        width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ToDoList-container {
+        width: 500px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ToDoList-container {
+        width: 300px;
+    }
+    .Header-container_icon {
+        position: static;
+    }
+    .Header-container_header {
+        margin-top: 5px;
+    }
+    .Header-container_divider {
+        margin-top: 10px;
+    }
+    .ToDo {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Container {
+ min-width: 100vw;
+ min-height: 100vh;   
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background: linear-gradient(90deg, #ff666639, #fff, #ff666639);
+}
